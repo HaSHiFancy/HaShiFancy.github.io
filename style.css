@@ -1,110 +1,224 @@
-/* Reset basic styles */
+/* Google Fonts වලින් ලස්සන Font එකක් ඇඩ් කරමු */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background-color: #f9f9f9;
+    background-color: #fcf8f9;
     color: #333;
 }
 
-/* Header style */
+/* Header & Nav */
 header {
-    background-color: #fff;
+    background-color: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 700;
+    color: #2c3e50;
+    letter-spacing: 1px;
+}
+
+.logo span {
     color: #ff4a75;
 }
 
 nav a {
-    margin-left: 20px;
     text-decoration: none;
-    color: #555;
+    color: #666;
+    font-weight: 500;
+    margin-left: 30px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: #ff4a75;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=1200');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    font-weight: 300;
+}
+
+.cta-btn {
+    display: inline-block;
+    background-color: #ff4a75;
+    color: #fff;
+    padding: 14px 35px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 74, 117, 0.4);
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 74, 117, 0.6);
+}
+
+/* Products Section */
+.products-section {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.products-section h2 {
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.section-subtitle {
+    color: #888;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* Product Card */
+.product-card {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #ff4a75;
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 20px;
+    z-index: 10;
+}
+
+.product-image {
+    height: 280px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.1);
+}
+
+.product-info {
+    padding: 25px;
+    text-align: left;
+}
+
+.product-info h3 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 10px;
     font-weight: 600;
 }
 
-/* Hero Section style */
-.hero {
-    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9');
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    padding: 100px 20px;
-}
-
-.hero h1 {
-    font-size: 36px;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 18px;
-    color: #666;
+.price {
+    font-size: 20px;
+    color: #ff4a75;
+    font-weight: 700;
     margin-bottom: 20px;
 }
 
-.btn {
-    display: inline-block;
-    background-color: #25D366; /* WhatsApp Green */
-    color: #fff;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 25px;
-    font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-/* Products Section style */
-.products {
-    padding: 5px 5%;
+.order-btn {
+    display: block;
     text-align: center;
-    margin-top: 40px;
+    background-color: #25D366;
+    color: #fff;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s ease;
 }
 
-.products h2 {
-    margin-bottom: 30px;
-    color: #ff4a75;
+.order-btn:hover {
+    background-color: #20ba5a;
 }
 
-.product-grid {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    font-size: 14px;
+    font-weight: 300;
 }
 
-.product-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    width: 250px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-}
-
-.product-img {
-    font-size: 50px;
-    margin-bottom: 15px;
-}
-
-.product-card h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.price {
-    color: #ff4a75;
-    font-weight: bold;
-    font-size: 16px;
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+    nav a {
+        margin: 0 10px;
+    }
+    .hero-content h1 {
+        font-size: 32px;
+    }
 }
